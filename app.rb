@@ -9,6 +9,7 @@ get "/" do
     Vandkunsten
     Garbanzo
     Lagkagehuset
+    American-Pie-Co
   ).sample
   erb :index
 end
