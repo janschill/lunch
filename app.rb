@@ -1,7 +1,8 @@
-require 'sinatra'
+require "sinatra"
+require "erb"
 
-get '/' do
-  %w(
+get "/" do
+  @lunch = %w(
     Mums
     Meno-Ramen
     Wokbox
@@ -9,4 +10,5 @@ get '/' do
     Garbanzo
     Lagkagehuset
   ).sample
+  erb :index
 end
