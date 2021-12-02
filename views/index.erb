@@ -12,6 +12,13 @@
 
 <body>
   <h1>Lunch</h1>
+
+  <form action="/" method="GET">
+    <label for="team">Team:</label><br>
+    <input name="team" type="text" id="team" value="<%= @req.params['team'] %>"><br>
+    <button>Submit</button>
+  </form>
+
   <p>Today we are going to: <strong><%= @lunch %></strong></p>
 </body>
 

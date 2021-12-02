@@ -5,7 +5,7 @@ get "/" do
   @req = Rack::Request.new(env)
   @date = Date.today.jd
   if @req.params.include?("team")
-    @date *= @req.params["team"].gsub(/[^A-z]/i, '').to_i(36)
+    @date *= @req.params["team"].gsub(/[^A-z]/i, '').downcase.to_i(36)
   end
   @lunch_options =  %w(
     Mums-deli
