@@ -39,8 +39,8 @@
 <script>
   function numeronymize(value) {
     const $output = document.querySelector("#numeronymOutput");
+    value = value.replace(/\s/g, "");
     if (value.length > 2) {
-      value = value.replace(/\s/g, "");
       value = `${value[0].toUpperCase()}${value.length-2}${value[value.length-1].toLowerCase()}`
     }
     $output.innerHTML = value
