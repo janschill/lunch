@@ -20,9 +20,32 @@
   </form>
 
   <p>Today we are going to: <strong><%= @lunch %></strong></p>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <label for="numeronym">Try our new Numeronym feature:</label>
+  <p id="numeronymOutput">I18n</p>
+  <input
+    type="text"
+    id="numeronymInput"
+    value="Internationalization"
+    onKeyPress="numeronymize(this.value)"
+    onKeyUp="numeronymize(this.value)">
 </body>
 
 <script>
+  function numeronymize(value) {
+    const $output = document.querySelector("#numeronymOutput");
+    if (value.length > 2) {
+      value = value.replace(/\s/g, "");
+      value = `${value[0].toUpperCase()}${value.length-2}${value[value.length-1].toLowerCase()}`
+    }
+    $output.innerHTML = value
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     window.confetti();
   })
